@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WebRTC ボイスチャット</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #chat {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebRTC ボイスチャット</h1>
+  <div id="login">
+    <input type="text" id="username" placeholder="名前を入力してください">
+    <button id="joinButton">参加</button>
+  </div>
+  <div id="chat">
+    <p>参加者: <span id="participant"></span></p>
+    <button id="leaveButton">退出</button>
+  </div>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-database-compat.js"></script>
+  <!-- Firebase Config -->
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAeexMp2eFgyhPBaFwpY9EBA7T3XvOY0xo",
+    authDomain: "voice-chat-2c604.firebaseapp.com",
+    databaseURL: "https://voice-chat-2c604-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "voice-chat-2c604",
+    storageBucket: "voice-chat-2c604.appspot.com",
+    messagingSenderId: "566719811142",
+    appId: "1:566719811142:web:fff13e1e272d5073b28447",
+    measurementId: "G-B28YB0KCPN"
+  };
+
+    // Firebaseを初期化
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
